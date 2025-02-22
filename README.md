@@ -16,4 +16,4 @@ pip install pymavlink
 
 Acknowledge
 ===
-"Thanks to all the teachers and partners, and we hope this prototype will be completed someday."
+Thanks to all the teachers and partners, and we hope this prototype will be completed someday.
