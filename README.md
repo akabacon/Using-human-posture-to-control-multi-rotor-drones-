@@ -5,5 +5,11 @@ Requirements
 ===
 
 ```
+#model
 pip install ultralytics
+pip install opencv-python
+
+#flycontroll
+pip install dronekit
+pip install pymavlink
 ```
