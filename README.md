@@ -3,3 +3,7 @@ This is our project: Using Human Posture to Control Multi-Rotor Drones. The code
 
 Requirements
 ===
+
+'''
+pip install ultralytics
+'''
