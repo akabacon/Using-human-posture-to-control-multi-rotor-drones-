@@ -13,3 +13,9 @@ pip install opencv-python
 pip install dronekit
 pip install pymavlink
 ```
+
+We are looking for interested partners who can help with the experiment and assist in successfully bringing this prototype to life.
+Here’s our github.
+https://github.com/akabacon/Using-human-posture-to-control-multi-rotor-drones-/
+
+Thank you for your support, and we look forward to collaborating with like-minded individuals!
