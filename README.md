@@ -13,3 +13,7 @@ pip install opencv-python
 pip install dronekit
 pip install pymavlink
 ```
+
+Acknowledge
+===
+"Thanks to all the teachers and partners, and we hope this prototype will be completed someday."
