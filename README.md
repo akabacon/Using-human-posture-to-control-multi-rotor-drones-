@@ -13,5 +13,3 @@ pip install opencv-python
 pip install dronekit
 pip install pymavlink
 ```
-
-have a great day.
