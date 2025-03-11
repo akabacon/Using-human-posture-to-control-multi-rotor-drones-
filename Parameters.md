@@ -14,7 +14,7 @@ abs_mid = (960, 540):
 
 cap = cv2.VideoCapture(0)
 ===
-### Make a adjust with physical camera 
+### Make a adjustment with physical camera 
 ### codec = 0x47504A4D  # MJPG
 ### cap.set(cv2.CAP_PROP_FPS, 30.0)
 ### cap.set(cv2.CAP_PROP_FOURCC, codec)
