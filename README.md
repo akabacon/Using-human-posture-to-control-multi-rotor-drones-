@@ -7,7 +7,7 @@ Requirements
 ```
 #python and setup
 #python=3.9
-#pytorch==1.13.1 torchvision==0.14.1
+#pytorch=1.13.1 torchvision=0.14.1
 
 #model
 pip install chardet
