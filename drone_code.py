@@ -6,6 +6,7 @@ import time
 import math
 import os
 
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 #our recognition
 def extract_and_process_tracks(tracks):
     boxes = tracks[0].boxes.xyxy.cpu()
