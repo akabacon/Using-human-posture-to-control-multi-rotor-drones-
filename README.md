@@ -6,10 +6,8 @@ Requirements
 
 ```
 #python and setup
-#conda create -n drone python=3.9
-#conda install -c conda-forge cudatoolkit=11.6
-#conda install cudatoolkit==11.6
-#conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+#python=3.9
+#pytorch==1.13.1 torchvision==0.14.1
 
 #model
 pip install chardet
