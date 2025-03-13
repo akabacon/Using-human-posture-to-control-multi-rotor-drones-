@@ -5,13 +5,23 @@ Requirements
 ===
 
 ```
+#python 3.9
+#conda install -c conda-forge cudatoolkit=11.6
+conda install cuda==11.6
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+pip install ultralytics
+
 #model
+pip install chardet
 pip install ultralytics
 pip install opencv-python
 
 #flycontroll
 pip install dronekit
 pip install pymavlink
+
+# Initializing libiomp5md.dll
+pip install numpy --upgrade
 ```
 
 Acknowledge
