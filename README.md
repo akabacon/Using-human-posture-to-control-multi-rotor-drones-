@@ -9,6 +9,9 @@ Requirements
 #python=3.9
 #pytorch=1.13.1 torchvision=0.14.1
 
+# Initializing libiomp5md.dll
+pip install numpy --upgrade
+
 #model
 pip install chardet
 pip install ultralytics
@@ -17,11 +20,7 @@ pip install opencv-python
 #flycontroll
 pip install dronekit
 pip install pymavlink
-
-# Initializing libiomp5md.dll
-pip install numpy --upgrade
 ```
-
 Acknowledge
 ===
 Thanks to all the teachers and partners, and we hope this prototype will be completed someday.
