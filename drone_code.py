@@ -97,21 +97,25 @@ def recognition(frame, model):
         dot_product1 = v1[0]*v2[0] + v1[1]*v2[1]
         magnitude_v1_2 = math.sqrt(v1[0]**2 + v1[1]**2) * math.sqrt(v2[0]**2 + v2[1]**2)
         cos_theta1 = dot_product1 / magnitude_v1_2
+        cos_theta1 = max(min(cos_theta1, 1.0), -1.0)
         angle1 = math.acos(cos_theta1) * (180.0 / math.pi)
         
         dot_product2 = v3[0]*v4[0] + v3[1]*v4[1]
         magnitude_v3_4 = math.sqrt(v3[0]**2 + v3[1]**2) * math.sqrt(v4[0]**2 + v4[1]**2)
         cos_theta2 = dot_product2 / magnitude_v3_4
+        cos_theta2 = max(min(cos_theta2, 1.0), -1.0)
         angle2 = math.acos(cos_theta2) * (180.0 / math.pi)
 
         dot_product3 = v5[0]*v6[0] + v5[1]*v6[1]
         magnitude_v5_6 = math.sqrt(v5[0]**2 + v5[1]**2) * math.sqrt(v6[0]**2 + v6[1]**2)
         cos_theta3 = dot_product3 / magnitude_v5_6
+        cos_theta3 = max(min(cos_theta3, 1.0), -1.0)
         angle3 = math.acos(cos_theta3) * (180.0 / math.pi)
 
         dot_product4 = v7[0]*v8[0] + v7[1]*v8[1]
         magnitude_v7_8 = math.sqrt(v7[0]**2 + v7[1]**2) * math.sqrt(v8[0]**2 + v8[1]**2)
         cos_theta4 = dot_product4 / magnitude_v7_8
+        cos_theta4 = max(min(cos_theta4, 1.0), -1.0)
         angle4 = math.acos(cos_theta4) * (180.0 / math.pi)
 
          # 顯示角度在右肩、右肘、右腕的位置
@@ -369,6 +373,7 @@ def condition_yaw(heading, relative=True):
         0, 0, 0)    # param 5 ~ 7 not used
     # send command to vehicle
     vehicle.send_mavlink(msg)
+    vehicle.flush()
 
 # 開始姿勢識別和移動
 
