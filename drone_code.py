@@ -288,6 +288,19 @@ def puttext_status(image, string):
     cv2.putText(image, string, org, fontFace, fontScale, color, thickness)
     return image
 
+def calculate_parameters_roi(box):
+        x_min, y_min, x_max, y_max = box
+        box_hei = y_max - y_min
+        new_range = (box_hei * 3, box_hei * 3)  # Update range based on box height
+        box_mid = ((x_max + x_min) / 2, (y_max + y_min) / 2)
+        abs_mid = (topleft[0] + box_mid[0], topleft[1] + box_mid[1])  # Update absolute mid
+        return box_hei, new_range,box_mid,abs_mid
+
+def not_detected(box):
+    if(box is None):
+        return True
+    else:
+        return False
 
 # 連接無人機
 vehicle = connect('/dev/ttyACM0', wait_ready=True, baud=57600)
@@ -398,7 +411,7 @@ while vel[3]!=3:
             image = puttext(image, com)
 
             # Update
-            if box is None:
+            if not_detected(box):
                 send_body_ned_velocity(0, 0, 0, 1)  # Stop drone with duration 1 second
 
                 abs_mid = (960, 540)
@@ -406,11 +419,8 @@ while vel[3]!=3:
             else:
                 condition_yaw(0)
                 send_body_ned_velocity(int(vel[0]), int(vel[1]), int(vel[2]), int(vel[3]))  # Move drone based on recognition
-                x_min, y_min, x_max, y_max = box
-                box_hei = y_max - y_min
-                new_range = (box_hei * 3, box_hei * 3)  # Update range based on box height
-                box_mid = ((x_max + x_min) / 2, (y_max + y_min) / 2)
-                abs_mid = (topleft[0] + box_mid[0], topleft[1] + box_mid[1])  # Update absolute mid
+                box_hei, new_range,box_mid,abs_mid = calculate_parameters_roi(box)
+
                 print(box_mid)
                 image = puttext_status(image, 'roi: On moving')
 
